@@ -9,7 +9,6 @@ const getStoreBook = () => {
 const addToStoreDB = (id) => {
     const storedData = getStoreBook();
     if (storedData.includes(id)) {
-        alert("Already Added!");
     } else {
         storedData.push(id);
         localStorage.setItem("readList", JSON.stringify(storedData));

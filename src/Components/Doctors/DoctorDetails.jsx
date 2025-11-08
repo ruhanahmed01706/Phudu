@@ -1,6 +1,10 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { addToStoreDB } from '../Utilitis/utilitis';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 const DoctorDetails = () => {
     const docdata = useLoaderData();
@@ -9,6 +13,11 @@ const DoctorDetails = () => {
 
     const handleMarkRead = (id) => {
         addToStoreDB(parseInt(id));
+        Swal.fire({
+  title: "Good job!",
+  text: "You clicked the button!",
+  icon: "success"
+});
     };
 
     return (
